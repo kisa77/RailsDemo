@@ -1,8 +1,21 @@
 Demo::Application.routes.draw do
     resources :people
+##    resources :event
 
     root 'welcome#index'
     get "welcome/say_hello" => "welcome#say"
+
+##    match 'event/(:action)' => 'event#(:action)',
+##                     :via   => [:get, :post],
+##                 :defaults  => { :action => "index" }
+
+    get "event/index" => "event#index"
+    get "event/show" => "event#show"
+    get "event/distory" => "event#distory"
+    post "event/update" => "event#update"
+    post "event/create" => "event#create"
+    get "event/edit" => "event#edit"
+    get "event/new" => "event#new"
 
     #match ':controller(/:action(/:id(.:format)))'
 
@@ -61,4 +74,5 @@ Demo::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+##  match ':controller(/:action(/:id(.:format)))'
 end
