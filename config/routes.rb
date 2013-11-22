@@ -1,11 +1,10 @@
 Demo::Application.routes.draw do
-  resources :people
-
     resources :people
 
     root 'welcome#index'
     get "welcome/say_hello" => "welcome#say"
 
+    #match ':controller(/:action(/:id(.:format)))'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

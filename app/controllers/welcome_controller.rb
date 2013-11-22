@@ -3,5 +3,6 @@ class WelcomeController < ApplicationController
     end
 
     def index
+        @events = Person.all
     end
 end

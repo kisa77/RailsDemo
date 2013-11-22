@@ -2,3 +2,17 @@
 <br>
 <br>
 <h2><%= link_to 'Link', welcome_say_hello_path %></h2>
+<br>
+<br>
+<br>
+<br>
+<ul>
+    <% @events.each do |event| %>
+    <li>
+    <%= event.name %>
+    <%= link_to 'Show', :controller => 'events', :action => 'show', :id => event %>
+    <%= link_to 'Edit', :controller => 'events', :action => 'edit', :id => event %>
+    <%= link_to 'Delete', :controller => 'events', :action => 'destroy', :id => event %>
+    </li>
+    <% end %>
+</ul>

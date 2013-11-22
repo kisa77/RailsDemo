@@ -2,12 +2,12 @@
 
 one:
   name: MyString
-  age: 1
-  borthday: 2013-11-22
+  description: MyText
   is_public: false
+  capacity: 1
 
 two:
   name: MyString
-  age: 1
-  borthday: 2013-11-22
+  description: MyText
   is_public: false
+  capacity: 1
