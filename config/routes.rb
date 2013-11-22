@@ -1,4 +1,6 @@
 Demo::Application.routes.draw do
+  resources :people
+
     resources :people
 
     root 'welcome#index'
