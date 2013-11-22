@@ -3,9 +3,10 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
       <th>Age</th>
+      <th>Name</th>
       <th>Birthday</th>
+      <th>Status</th>
       <th></th>
       <th></th>
       <th></th>
@@ -15,9 +16,10 @@
   <tbody>
     <% @people.each do |person| %>
       <tr>
-        <td><%= person.name %></td>
         <td><%= person.age %></td>
+        <td><%= person.name %></td>
         <td><%= person.birthday %></td>
+        <td><%= person.status %></td>
         <td><%= link_to 'Show', person %></td>
         <td><%= link_to 'Edit', edit_person_path(person) %></td>
         <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
