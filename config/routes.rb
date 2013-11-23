@@ -1,23 +1,34 @@
 Demo::Application.routes.draw do
     resources :people
-##    resources :event
+    # resources :event
+    # 等价于
+    # get    '/events'          => "events#index",   :as => "events"
+    # post   '/events'          => "events#create",  :as => "events"
+    # get    '/events/:id'      => "events#show",    :as => "event"
+    # put    '/events/:id'      => "events#update",  :as => "event"
+    # delete '/events/:id'      => "events#destroy", :as => "event"
+    # get    '/events/new'      => "events#new",     :as => "new_event"
+    # get    '/events/:id/edit' => "events#edit",    :as => "edit_event"
+
 
     root 'welcome#index'
     get "welcome/say_hello" => "welcome#say"
 
-##    match 'event/(:action)' => 'event#(:action)',
-##                     :via   => [:get, :post],
-##                 :defaults  => { :action => "index" }
-
     get "event/index" => "event#index"
     get "event/show" => "event#show"
-    get "event/distory" => "event#distory"
-    post "event/update" => "event#update"
+    get "event/destroy" => "event#destroy"
+    ## fuck you!!!
+    patch "event/update" => "event#update"
+    delete "event/update" => "event#destroy"
     post "event/create" => "event#create"
     get "event/edit" => "event#edit"
     get "event/new" => "event#new"
 
     #match ':controller(/:action(/:id(.:format)))'
+
+##    match 'event/(:action)' => 'event#(:action)',
+##                     :via   => [:get, :post],
+##                 :defaults  => { :action => "index" }
 
 
   # The priority is based upon order of creation: first created -> highest priority.

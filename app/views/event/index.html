@@ -13,8 +13,10 @@
     <span><%= event.name %></span>
     <%= link_to('Show',     event_show_path({:id => event.id}), {:style => 'margin-left:15px;'}) %>
     <%= link_to('Edit',     event_edit_path({:id => event.id}), {:style => 'margin-left:15px;'}) %>
-    <%= link_to('Distory',  event_distory_path({:id => event.id}) ) %>
+    <%= link_to('Destroy',  event_destroy_path({:id => event.id}) ) %>
     </li>
     <% end %>
 </ul>
-<%= link_to('New Event',  event_new_path) %>
+<%= paginate @events %>
+<br>
+<%= link_to('New Event',  event_new_path, :style => 'margin-top:20px') %>
