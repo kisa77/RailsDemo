@@ -14,7 +14,7 @@ class EventController < ApplicationController
     def show
         respond_to do |format|
             format.html { @page_title = @event.name } # show.html.erb
-            format.xml # show.xml.builder
+            format.xml # app/views/event/show.xml.builder
             format.json { render :json => { id: @event.id, name: @event.name, description: @event.description }.to_json }
         end
     end

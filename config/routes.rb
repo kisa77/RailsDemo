@@ -1,6 +1,8 @@
 Demo::Application.routes.draw do
+    resources :carts
     resources :people
     resources :event
+
     # 等价于
     # get    '/event'          => "event#index",   :as => "event"
     # post   '/event'          => "event#create",  :as => "event"
