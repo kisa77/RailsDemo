@@ -11,12 +11,18 @@
     <% @events.each do |event| %>
     <li>
     <span><%= event.name %></span>
-    <%= link_to('Show',     event_show_path({:id => event.id}), {:style => 'margin-left:15px;'}) %>
-    <%= link_to('Edit',     event_edit_path({:id => event.id}), {:style => 'margin-left:15px;'}) %>
-    <%= link_to('Destroy',  event_destroy_path({:id => event.id}) ) %>
+    <%#= link_to('Show',     event_show_path({:id => event.id}), {:style => 'margin-left:15px;'}) %>
+    <%#= link_to('Edit',     event_edit_path({:id => event.id}), {:style => 'margin-left:15px;'}) %>
+    <%#= link_to('Destroy',  event_destroy_path({:id => event.id}) ) %>
+
+    <%= link_to('Show',     event_path(event), {:style => 'margin-left:15px;'}) %>
+    <%= link_to('(XML)',     event_path(event, :format => :xml), {:style => 'margin-left:15px;'}) %>
+    <%= link_to('(JSON)',     event_path(event, :format => :json), {:style => 'margin-left:15px;'}) %>
+    <%= link_to('Edit',     edit_event_path(event), {:style => 'margin-left:15px;'}) %>
+    <%= link_to('Destroy',  event_path(event), :method => :delete ) %>
     </li>
     <% end %>
 </ul>
 <%= paginate @events %>
 <br>
-<%= link_to('New Event',  event_new_path, :style => 'margin-top:20px') %>
+<%= link_to('New Event',  new_event_path, :style => 'margin-top:20px') %>

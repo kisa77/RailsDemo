@@ -1,28 +1,28 @@
 Demo::Application.routes.draw do
     resources :people
-    # resources :event
+    resources :event
     # 等价于
-    # get    '/events'          => "events#index",   :as => "events"
-    # post   '/events'          => "events#create",  :as => "events"
-    # get    '/events/:id'      => "events#show",    :as => "event"
-    # put    '/events/:id'      => "events#update",  :as => "event"
-    # delete '/events/:id'      => "events#destroy", :as => "event"
-    # get    '/events/new'      => "events#new",     :as => "new_event"
-    # get    '/events/:id/edit' => "events#edit",    :as => "edit_event"
+    # get    '/event'          => "event#index",   :as => "event"
+    # post   '/event'          => "event#create",  :as => "event"
+    # get    '/event/:id'      => "event#show",    :as => "event"
+    # put    '/event/:id'      => "event#update",  :as => "event"
+    # delete '/event/:id'      => "event#destroy", :as => "event"
+    # get    '/event/new'      => "event#new",     :as => "new_event"
+    # get    '/event/:id/edit' => "event#edit",    :as => "edit_event"
 
 
     root 'welcome#index'
     get "welcome/say_hello" => "welcome#say"
 
-    get "event/index" => "event#index"
-    get "event/show" => "event#show"
-    get "event/destroy" => "event#destroy"
-    ## fuck you!!!
-    patch "event/update" => "event#update"
-    delete "event/update" => "event#destroy"
-    post "event/create" => "event#create"
-    get "event/edit" => "event#edit"
-    get "event/new" => "event#new"
+##    get "event/index" => "event#index"
+##    get "event/show" => "event#show"
+##    get "event/destroy" => "event#destroy"
+##    ## fuck you!!!
+##    patch "event/update" => "event#update"
+##    delete "event/update" => "event#destroy"
+##    post "event/create" => "event#create"
+##    get "event/edit" => "event#edit"
+##    get "event/new" => "event#new"
 
     #match ':controller(/:action(/:id(.:format)))'
 

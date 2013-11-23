@@ -8,11 +8,15 @@ class EventController < ApplicationController
 
     def index
 ##        @events = Event.all
-        @events = Event.page(params.permit![:page]).per(2)
+        @events = Event.page(params.permit![:page]).per(5)
     end
 
     def show
-##        @event = Event.find( params.permit![:id])
+        respond_to do |format|
+            format.html { @page_title = @event.name } # show.html.erb
+            format.xml # show.xml.builder
+            format.json { render :json => { id: @event.id, name: @event.name, description: @event.description }.to_json }
+        end
     end
 
     def edit
@@ -35,7 +39,7 @@ class EventController < ApplicationController
             flash[:alert] = "record not found id=#{params.permit![:id]}"
         end
 
-        redirect_to :action => 'index'
+        redirect_to event_url(@event)
     end
 
     def new
@@ -43,10 +47,12 @@ class EventController < ApplicationController
     end
 
     def create
+        Rails.logger.debug("event: #{@event.inspect}")
         @event = Event.new(params.permit![:event])
         @event.save
+        Rails.logger.debug("event: #{@event.inspect}")
         flash[:notice] = 'event was successfully created'
 
-        redirect_to :action => 'index'
+        redirect_to event_index_url
     end
 end
