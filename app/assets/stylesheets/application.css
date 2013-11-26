@@ -31,3 +31,5 @@ width: 13em;
 color: #bfb;
 font-size: small;
 }
+
+#store .entry from, #store .entry from div {display:inline;}

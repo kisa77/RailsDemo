@@ -72,6 +72,7 @@ class CartsController < ApplicationController
       params[:cart]
     end
 
+    # 当前购物车
     def current_cart
         Card.find(seddion[:cart_id])
     rescue ActiveRecord::RecordNotFound
