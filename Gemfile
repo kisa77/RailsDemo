@@ -1,5 +1,9 @@
 source 'http://ruby.taobao.org'
 
+# debug tool
+gem "pry"
+gem "pry-nav"
+
 # mysql库
 gem 'mysql2'
 # 分页
