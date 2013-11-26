@@ -28,7 +28,9 @@ class LineItemsController < ApplicationController
     @line_item = LineItem.new(line_item_params)
     @cart = current_cart
     product = Product.find(params.permit![:product_id])
-    @line_item = @cart.line_items.build(:product_id => product.id)
+    @line_item = @cart.add_product(product.id)
+
+    #@line_item = @cart.line_items.build(:product_id => product.id)
 
     respond_to do |format|
       if @line_item.save
