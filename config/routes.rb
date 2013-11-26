@@ -1,4 +1,5 @@
 Demo::Application.routes.draw do
+  get "store/index"
   resources :products
 
   resources :line_items
@@ -17,7 +18,8 @@ Demo::Application.routes.draw do
     # get    '/event/:id/edit' => "event#edit",    :as => "edit_event"
 
 
-    root 'welcome#index'
+    #root 'welcome#index'
+    root :to => 'store#index', :as => 'store'
     get "welcome/say_hello" => "welcome#say"
 
 ##    get "event/index" => "event#index"
