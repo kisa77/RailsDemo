@@ -33,3 +33,6 @@ font-size: small;
 }
 
 #store .entry from, #store .entry from div {display:inline;}
+
+#cart, #cart table{font-size:small;color:white}
+#cart table {border-top: 1px dotted #595;border-bottom:1px dotted #595; margin;bottom:10px;}

@@ -13,15 +13,18 @@
 <body class="<%= controller.controller_name %>">
     <!-- START_HIGHLIGHT -->
     <div id="banner">
-        <%= image_tag("logo.png") %>
+        <!--<%= image_tag("http://l.ruby-china.org/assets/text_logo-3609989243456a4c620bf2342986b638.png") %>-->
         <%= @page_title || "Pragmatic Bookshelf" %><!-- <label id="code.depot.e.title"/> -->
     </div>
     <div id="columns">
         <div id="side">
+            <div id='cart'>
+                <%= render @cart%>
+            </div>
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/products">Products</a></li>
-                <li><a href="/line_items">MyCart</a></li>
+                <li><a href="/carts/<%= session[:cart_id] %>">MyCart</a></li>
             </ul>
         </div>
         <div id="main">
