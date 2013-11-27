@@ -1,12 +1,14 @@
 Demo::Application.routes.draw do
-  get "store/index"
-  resources :products
+    resources :users
 
-  resources :line_items
+    resources :products
 
+    resources :line_items
     resources :carts
     resources :people
     resources :event
+
+    get "store/index"
 
     # 等价于
     # get    '/event'          => "event#index",   :as => "event"
