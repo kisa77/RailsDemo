@@ -10,6 +10,11 @@ Demo::Application.routes.draw do
 
     get "store/index"
 
+    # user
+    get "login" => "users#login"
+    post "login" => "users#create_session"
+    get "logout" => "users#logout"
+
     # 等价于
     # get    '/event'          => "event#index",   :as => "event"
     # post   '/event'          => "event#create",  :as => "event"

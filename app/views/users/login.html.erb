@@ -1,0 +1,31 @@
+<div>
+    <% if flash[:alert] %>
+        <div id="error_explanation">
+            <p id = 'alert'><%= flash[:alert] %></p>
+        </div>
+    <% end %>
+    <% if flash[:notice] %>
+        <div id="error_explanation">
+            <p id = 'notice'><%= flash[:notice] %></p>
+        </div>
+    <% end %>
+<%= form_tag do %>
+  <fieldset>
+    <legend>Login</legend>
+
+    <div class="field">
+        <label for = "name">Name:</label>
+        <%= text_field_tag :name, params[:name] %>
+    </div>
+    <div class="field">
+        <label for = "Password">Password:</label>
+        <%= password_field_tag :password, params[:password] %>
+    </div>
+    <div class="actions">
+        <%= submit_tag %>
+    </div>
+  </fieldset>
+<% end %>
+</div>
+
+<%= link_to 'Back', users_path %>

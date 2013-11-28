@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :get_current_cart
+  skip_before_filter :authorize
 
   # GET /users
   # GET /users.json
@@ -61,6 +62,23 @@ class UsersController < ApplicationController
       format.html { redirect_to users_url }
       format.json { head :no_content }
     end
+  end
+
+  def login
+  end
+
+  def create_session
+      if user = User.authenticate(params[:name], params[:password])
+          session[:user_id] = user.id
+          return redirect_to store_url
+      else
+          return redirect_to login_url, :alert => "Invalid user/password"
+      end
+  end
+
+  def logout
+      session[:user_id] = nil
+      redirect_to store_url, :notice => "Logged out success"
   end
 
   private
