@@ -14,6 +14,7 @@ Demo::Application.routes.draw do
     get "login" => "users#login"
     post "login" => "users#create_session"
     get "logout" => "users#logout"
+    get 'admin' => "admin/index#hello"
 
     # 等价于
     # get    '/event'          => "event#index",   :as => "event"
