@@ -1,5 +1,22 @@
 zh-CN:
   admin:
+    js:
+      true: True
+      false: False
+      is_present: Is present
+      is_blank: Is blank
+      date: Date ...
+      between_and_: Between ... and ...
+      today: Today
+      yesterday: Yesterday
+      this_week: This week
+      last_week: Last week
+      number: Number ...
+      contains: Contains
+      is_exactly: Is exactly
+      starts_with: Starts with
+      ends_with: Ends with
+    loading: "加载中..."
     home:
       name: "首页"
     pagination:
@@ -22,6 +39,7 @@ zh-CN:
       up: "上"
       down: "下"
       navigation: "导航"
+      navigation_static_label: "Links"
       log_out: "登出"
       ago: "前"
     flash:
@@ -111,6 +129,7 @@ zh-CN:
     export:
       confirmation: "导出到%{name}"
       select: "选择希望导出的字段"
+      select_all_fields: "选择全部字段"
       fields_from: "出自%{name}的字段"
       fields_from_associated: "源自与%{name}关联项目的字段"
       display: "显示%{name}: %{type}"
