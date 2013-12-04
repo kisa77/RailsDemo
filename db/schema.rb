@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131127040248) do
+ActiveRecord::Schema.define(version: 20131129033426) do
 
   create_table "carts", force: true do |t|
     t.datetime "created_at"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20131127040248) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "status"
+    t.integer  "event_id"
   end
 
   create_table "products", force: true do |t|

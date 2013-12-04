@@ -8,6 +8,8 @@ gem "pry-nav"
 gem 'mysql2'
 # 分页
 gem 'kaminari'
+# admin管理
+gem 'rails_admin'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'

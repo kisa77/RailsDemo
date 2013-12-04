@@ -43,3 +43,13 @@ production:
   database: rails
   pool: 5
   timeout: 5000
+
+test:
+  adapter: mysql2
+  encoding: utf8
+  username: root
+  password: root12
+  host: localhost
+  database: weixin
+  pool: 5
+  timeout: 5000
