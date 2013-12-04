@@ -1,5 +1,7 @@
 # RailsAdmin config file. Generated on December 04, 2013 13:56
 # See github.com/sferik/rails_admin for more informations
+require 'i18n'
+I18n.default_locale = 'zh-CN'
 
 RailsAdmin.config do |config|
 
@@ -15,7 +17,7 @@ RailsAdmin.config do |config|
   config.current_user_method { current_manager } # auto-generated
 
   # If you want to track changes on your models:
-  # config.audit_with :history, 'Manager'
+  config.audit_with :history, 'Manager'
 
   # Or with a PaperTrail: (you need to install it first)
   # config.audit_with :paper_trail, 'Manager'
