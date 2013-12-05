@@ -11,6 +11,8 @@ gem 'kaminari'
 # admin管理
 gem 'rails_admin'
 
+gem 'activeadmin', github: 'gregbell/active_admin'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'
 
@@ -58,3 +60,4 @@ end
 
 
 gem "devise"
+
