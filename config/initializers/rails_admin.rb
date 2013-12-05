@@ -10,6 +10,12 @@ RailsAdmin.config do |config|
 
   # Set the admin name here (optional second array element will appear in red). For example:
   config.main_app_name = ['Demo', 'Admin']
+
+  # static link
+  config.navigation_static_label = "My Links"
+  config.navigation_static_links = {
+        'Google' => 'http://www.google.com'
+  }
   # or for a more dynamic name:
   # config.main_app_name = Proc.new { |controller| [Rails.application.engine_name.titleize, controller.params['action'].titleize] }
 
