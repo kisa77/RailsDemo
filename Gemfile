@@ -9,9 +9,15 @@ gem 'mysql2'
 # 分页
 gem 'kaminari'
 # admin管理
-gem 'rails_admin'
+#gem 'rails_admin'
 
 gem 'activeadmin', github: 'gregbell/active_admin'
+
+gem 'quiet_assets'
+
+# queue
+gem 'sidekiq'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'
