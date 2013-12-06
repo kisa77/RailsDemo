@@ -2,7 +2,13 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-  before_filter :authorize
+
+  before_filter :authorize, :current_cart
+
+  def set_current_cart
+      @cart = current_cart
+  end
+
 
   private
   # 当前购物车

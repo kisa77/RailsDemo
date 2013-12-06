@@ -5,8 +5,10 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
-    @cart = current_cart
+      # sidekiq
+      HardWorker.perform_async('job', 5)
+      @products = Product.all
+      @cart = current_cart
   end
 
   # GET /products/1
